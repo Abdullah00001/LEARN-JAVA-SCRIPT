@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            width: 100%;
+        }
+        .topHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .options ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .options ul li {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .options ul li:last-child {
+            margin-right: 0;
+        }
+        .options ul li:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styling for Tablets */
+        @media screen and (max-width: 768px) {
+            .topHeader {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .options ul {
+                flex-direction: column;
+                display: none; /* Hide menu by default on small screens */
+            }
+            .options ul.active {
+                display: flex; /* Show menu when active */
+            }
+            .options ul li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .toggle-btn {
+                display: block;
+                cursor: pointer;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 20px;
+            }
+        }
+
+        /* Responsive Styling for Mobile */
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+            .options ul li {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="topHeader">
+                <div class="logo">Somudro</div>
+                <button class="toggle-btn">&#9776;</button> <!-- Hamburger menu icon -->
+                <div class="options">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Toggle menu function
+        document.querySelector('.toggle-btn').addEventListener('click', function() {
+            document.querySelector('.options ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
